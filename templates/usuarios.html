@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Informações Formosa</title>
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #2563eb;
+            font-weight: 700;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border: 2px solid #2563eb;
+            border-radius: 8px;
+            background-color: #f0f9ff;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 1200px; /* MAIS LARGA */
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        th {
+            background-color: #2563eb;
+            color: #fff;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            color: #444;
+            font-size: 13px;      /* LETRA MENOR */
+            white-space: nowrap;  /* NÃO QUEBRA */
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #d9e5f0;
+        }
+
+        tbody tr:hover {
+            background-color: #b8bbc2;
+            transition: background-color 0.2s;
+        }
+
+        /* LARGURA MAIOR PARA INICIO E FIM */
+        th:nth-child(2),
+        th:nth-child(3),
+        td:nth-child(2),
+        td:nth-child(3) {
+            width: 260px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Informações Formosa</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Contagem</th>
+                <th>Nome</th>
+                <th>Início</th>
+                <th>Fim</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for u in usuarios %}
+            <tr>
+                <td>{{ u.ordem }}</td>
+                <td>{{ u.nome }}</td>
+                <td>{{ u.inicio }}</td>
+                <td>{{ u.fim }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
