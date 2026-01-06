@@ -25,13 +25,13 @@ def usuarios():
     cursor = conexao.cursor(dictionary=True)
 
     cursor.execute("""
-        SELECT 
-            ROW_NUMBER() OVER (ORDER BY inicio DESC, fim DESC) AS ordem,
-            id,
-            nome,
-            inicio,
-            fim
-        FROM informacoes_formosa;
+            SELECT 
+                ROW_NUMBER() OVER (ORDER BY inicio DESC, fim DESC) AS ordem,
+                id,
+                nome,
+                inicio,
+                fim
+            FROM informacoes_formosa;
     """)
 
     usuarios = cursor.fetchall()
