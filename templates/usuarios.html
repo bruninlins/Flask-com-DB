@@ -2,116 +2,195 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Informações Formosa</title>
+    <title>Estação Formosa | Rastreamento Satelital</title>
 
-    <!-- Fonte -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/antena.png') }}">
+
+    <!-- FONTE -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
             font-family: 'Inter', sans-serif;
         }
 
         body {
-            background-color: #f4f6f8;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px;
+            background: radial-gradient(circle at top, #0f172a, #020617);
+            color: #e5e7eb;
+            min-height: 100vh;
         }
 
-        h1 {
-            margin-bottom: 30px;
-            color: #2563eb;
-            font-weight: 700;
-            font-size: 36px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            letter-spacing: 1px;
-            text-transform: uppercase;
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 60px;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            width: 55px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: #38bdf8;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: #020617;
+            background-color: #38bdf8;
             padding: 10px 20px;
-            border: 2px solid #2563eb;
             border-radius: 8px;
-            background-color: #f0f9ff;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #0ea5e9;
+        }
+
+        main {
+            padding: 40px 60px;
+        }
+
+        .title {
+            margin-bottom: 25px;
+        }
+
+        .title h2 {
+            font-size: 28px;
+            color: #38bdf8;
+            margin-bottom: 8px;
+        }
+
+        .title p {
+            color: #94a3b8;
+            font-size: 15px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid #1e293b;
         }
 
         table {
-            border-collapse: collapse;
             width: 100%;
-            max-width: 1200px; /* MAIS LARGA */
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border-collapse: collapse;
+            min-width: 900px;
+            background-color: #020617;
+        }
+
+        thead {
+            background-color: #020617;
         }
 
         th {
-            background-color: #2563eb;
-            color: #fff;
-            padding: 12px;
+            padding: 14px;
             text-align: left;
-            font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #38bdf8;
+            border-bottom: 1px solid #1e293b;
             white-space: nowrap;
         }
 
         td {
-            padding: 10px;
-            border-bottom: 1px solid #eee;
-            color: #444;
-            font-size: 13px;      /* LETRA MENOR */
-            white-space: nowrap;  /* NÃO QUEBRA */
-        }
-
-        tr:last-child td {
-            border-bottom: none;
+            padding: 12px;
+            font-size: 13px;
+            color: #e5e7eb;
+            border-bottom: 1px solid #1e293b;
+            white-space: nowrap;
         }
 
         tbody tr:nth-child(even) {
-            background-color: #ffffff;
+            background-color: #020617;
         }
 
         tbody tr:nth-child(odd) {
-            background-color: #d9e5f0;
+            background-color: #020617;
         }
 
         tbody tr:hover {
-            background-color: #b8bbc2;
-            transition: background-color 0.2s;
+            background-color: #020617;
+            box-shadow: inset 0 0 0 9999px rgba(56,189,248,0.08);
         }
 
-        /* LARGURA MAIOR PARA INICIO E FIM */
-        th:nth-child(2),
+        /* largura maior para inicio e fim */
         th:nth-child(3),
-        td:nth-child(2),
-        td:nth-child(3) {
+        th:nth-child(4),
+        td:nth-child(3),
+        td:nth-child(4) {
             width: 260px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+            color: #64748b;
+            border-top: 1px solid #1e293b;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Informações Formosa</h1>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='img/antena.png') }}" alt="Logo Satélite">
+            <h1>Estação Formosa</h1>
+        </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Contagem</th>
-                <th>Nome</th>
-                <th>Início</th>
-                <th>Fim</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for u in usuarios %}
-            <tr>
-                <td>{{ u.ordem }}</td>
-                <td>{{ u.nome }}</td>
-                <td>{{ u.inicio }}</td>
-                <td>{{ u.fim }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+        <a href="/home" class="back-btn">⬅ Voltar para Home</a>
+    </header>
+
+    <main>
+        <div class="title">
+            <h2>Dados de Rastreamento</h2>
+            <p>Janelas de comunicação e informações de passagem de satélites</p>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Satélite</th>
+                        <th>Início</th>
+                        <th>Fim</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for u in usuarios %}
+                    <tr>
+                        <td>{{ u.ordem }}</td>
+                        <td>{{ u.nome }}</td>
+                        <td>{{ u.inicio }}</td>
+                        <td>{{ u.fim }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        © 2025 • Sistema de Rastreamento Satelital • Estação Formosa
+    </footer>
 
 </body>
 </html>

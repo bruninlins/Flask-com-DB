@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel de Rastreamento Satelital</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/estacao.png') }}">
+
+    <!-- FONTE -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at top, #0f172a, #020617);
+            color: #e5e7eb;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+        .logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 34px;
+            color: #38bdf8;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 16px;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #020617, #020617);
+            border: 1px solid #1e293b;
+            padding: 30px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #e5e7eb;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(56,189,248,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 45px rgba(56,189,248,0.35);
+            border-color: #38bdf8;
+        }
+
+        .card span {
+            font-size: 42px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #38bdf8;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="{{ url_for('static', filename='img/estacao.png') }}" alt="Logo Satélite" class="logo">
+        <h1>Painel de Rastreamento Satelital</h1>
+        <p>Monitoramento e dados de passagem de satélites em tempo quase real</p>
+    </header>
+
+    <main>
+        <div class="cards">
+            <a href="/usuarios" class="card">
+                <span>🛰️</span>
+                <h2>Formosa</h2>
+                <p>Dados de rastreio e janelas de comunicação</p>
+            </a>
+
+            <!-- FUTURO -->
+            
+            <a href="/outra_cidade" class="card">
+                <span>📡</span>
+                <h2>Outra Estação</h2>
+                <p>Informações de rastreamento</p>
+            </a>
+            
+        </div>
+    </main>
+
+    <footer>
+        © 2025 • Sistema de Rastreamento Satelital
+    </footer>
+
+</body>
+</html>

@@ -13,6 +13,12 @@ def get_conexao():
         use_pure=True
     )
 
+# HOME
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+# FORMOSA
 @app.route("/usuarios")
 def usuarios():
     conexao = get_conexao()
