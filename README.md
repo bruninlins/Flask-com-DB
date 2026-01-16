@@ -107,6 +107,6 @@ http://localhost:5002/home
 - Estrutura preparada para inclusão de novas estações futuramente
 
 ## 👨‍💻 Autor
-Bruno Torres
-Desenvolvedor Full Stack
+Bruno Torres - Desenvolvedor Full-Stack
+
 Projeto desenvolvido para apoio operacional e monitoramento interno.
