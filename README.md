@@ -1,10 +1,16 @@
 # 🛰️ Sistema de Rastreamento Satelital – INPE
 
+<br>
+
 Sistema web desenvolvido para **uso pessoal e interno**, com o objetivo de **monitorar e validar o recebimento de arquivos de satélites** provenientes de diferentes estações de rastreamento do **INPE (Instituto Nacional de Pesquisas Espaciais)**.
 
 A aplicação permite visualizar, de forma organizada, as **janelas de comunicação**, o **nome do satélite** e os **horários de início e fim** das passagens, auxiliando na verificação se os dados foram enviados corretamente.
 
+<br>
+
 ---
+
+<br>
 
 ## 📌 Funcionalidades
 
@@ -15,7 +21,11 @@ A aplicação permite visualizar, de forma organizada, as **janelas de comunica�
 - Consulta direta ao banco de dados MySQL
 - Estrutura preparada para expansão (novas estações)
 
+<br>
+
 ---
+
+<br>
 
 ## 🖥️ Telas do Sistema
 
@@ -31,7 +41,11 @@ A aplicação permite visualizar, de forma organizada, as **janelas de comunica�
   - Horário de início da passagem
   - Horário de fim da passagem
 
+<br>
+
 ---
+
+<br>
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -42,7 +56,11 @@ A aplicação permite visualizar, de forma organizada, as **janelas de comunica�
 - **CSS3**
 - **Jinja2**
 
+<br>
+
 ---
+
+<br>
 
 ## 📂 Estrutura do Projeto
 
@@ -58,6 +76,10 @@ A aplicação permite visualizar, de forma organizada, as **janelas de comunica�
 └── README.md
 ```
 
+---
+
+<br>
+
 ## ⚙️ Configuração do Ambiente
 
 ### 1️⃣ Clonar o repositório
@@ -69,6 +91,12 @@ git clone https://github.com/seu-usuario/seu-repositorio.git
 ```bash
 pip install flask mysql-connector-python
 ```
+
+<br>
+
+---
+
+<br>
 
 ## 🗄️ Banco de Dados
 
@@ -87,6 +115,12 @@ CREATE TABLE informacoes_formosa (
 );
 ```
 
+<br>
+
+---
+
+<br>
+
 ## ▶️ Executando o Projeto
 
 ```bash
@@ -98,6 +132,12 @@ python app.py
 http://localhost:5002/home
 ```
 
+<br>
+
+---
+
+<br>
+
 ## 🔒 Observações Importantes
 
 - Este projeto é de uso pessoal/institucional
@@ -105,6 +145,10 @@ http://localhost:5002/home
 - Não expõe dados sensíveis
 - Desenvolvido para monitoramento e validação de arquivos recebidos
 - Estrutura preparada para inclusão de novas estações futuramente
+
+---
+
+<br>
 
 ## 👨‍💻 Autor
 Bruno Torres - Desenvolvedor Full-Stack
