@@ -31,7 +31,8 @@ def usuarios():
                 nome,
                 inicio,
                 fim
-            FROM informacoes_formosa;
+            FROM informacoes_formosa
+            ORDER BY inicio DESC , fim DESC;
     """)
 
     usuarios = cursor.fetchall()
